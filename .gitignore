@@ -1,0 +1,116 @@
+# ========================================
+# SafePIX - .gitignore
+# ========================================
+
+# ========================================
+# Arquivos de Build e Output
+# ========================================
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# ========================================
+# Arquivos de Banco de Dados
+# ========================================
+*.db
+*.db-shm
+*.db-wal
+*.db-log
+
+# ========================================
+# Arquivos de Usuário e IDE
+# ========================================
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ========================================
+# NuGet
+# ========================================
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# ========================================
+# Arquivos de Teste
+# ========================================
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ========================================
+# Arquivos Temporários
+# ========================================
+*.tmp
+*.temp
+*.log
+*.swp
+*~
+
+# ========================================
+# Documentação Interna (Excluir)
+# Apenas DOCUMENTACAO.md vai para o repo
+# ========================================
+README.md
+IMPLEMENTACAO.md
+MIGRACAO_LITEDB.md
+TESTES.md
+TESTES_COMPLETOS.md
+planning.md
+xp-bank/TESTES_COMPLETOS.md
+
+# ========================================
+# Arquivos HTTP de Teste
+# ========================================
+*.http
+
+# ========================================
+# Windows
+# ========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ========================================
+# macOS
+# ========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ========================================
+# Rider
+# ========================================
+.idea/
+*.sln.iml
+
+# ========================================
+# Visual Studio Code
+# ========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ========================================
+# Projeto de Testes Completo (Opcional)
+# Descomente se não quiser subir os testes
+# ========================================
+# xp-bank.Tests/
+
+# ========================================
+# Manter apenas DOCUMENTACAO.md
+# Todos os outros .md são excluídos acima
+# ========================================
+
