@@ -60,7 +60,6 @@ TestResults/
 # Documentação Interna (Excluir)
 # Apenas DOCUMENTACAO.md vai para o repo
 # ========================================
-README.md
 IMPLEMENTACAO.md
 MIGRACAO_LITEDB.md
 TESTES.md
