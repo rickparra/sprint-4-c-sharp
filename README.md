@@ -1,5 +1,21 @@
 # 🏦 SafePIX - Documentação Geral do Projeto
 
+## 👥 Equipe de Desenvolvimento
+
+Este projeto é desenvolvido por estudantes da FIAP da 3ESPV:
+
+- **Henrique Parra Benitez** (RM551973) - 3ESPV  
+
+- **Roberto Oliveira Azzalin Navas** (RM551460) - 3ESPV  
+
+- **Tony Willian da Silva Segalin** (RM550667) - 3ESPV  
+
+- **Guilherme Barreto** (RM98939) - 3ESPV  
+
+- **Nicolas Oliveira** (RM550667) - 3ESPV  
+
+---
+
 ## 📋 Sobre o Projeto
 
 ### O que é o SafePIX?
@@ -44,12 +60,6 @@ O sistema identifica automaticamente empresas do setor de apostas através da AP
 
 - **ReceitaWS** - API pública gratuita para consulta de CNPJ (https://receitaws.com.br)
 
-### Testes (Projeto Adicional)
-
-- **xUnit 2.8.2** - Framework de testes
-- **FluentAssertions 8.7.1** - Asserções expressivas
-- **Moq 4.20.72** - Framework para mocks
-
 ---
 
 ## 🏗️ Arquitetura do Código
@@ -90,8 +100,7 @@ xp-bank/
 │   └── LiteDbContext.cs          → Contexto LiteDB (4 coleções)
 │
 ├── Program.cs                # Configuração da aplicação
-├── appsettings.json          # Configurações
-└── xp-bank.http              # Exemplos de requisições HTTP
+└── appsettings.json          # Configurações
 ```
 
 ### Responsabilidades de Cada Camada
@@ -168,7 +177,7 @@ O Swagger abrirá automaticamente com todos os endpoints documentados!
 
 ### Banco de Dados
 
-O LiteDB criará automaticamente o arquivo `SafePix.db` no diretório do projeto. Não é necessário nenhuma configuração ou instalação adicional.
+O LiteDB criará automaticamente o arquivo de banco de dados no diretório do projeto na primeira execução. Não é necessário nenhuma configuração ou instalação adicional.
 
 ---
 
@@ -855,38 +864,6 @@ public class Transaction
 
 ---
 
-## 🧪 Testes Unitários
-
-O projeto inclui **45 testes unitários** (100% passando):
-
-```
-xp-bank.Tests/
-├── Services/
-│   ├── ReceitaWsServiceTests.cs  (10 testes) ✅
-│   └── PixServiceTests.cs        (7 testes) ✅
-├── Controllers/
-│   ├── UsersControllerTests.cs   (6 testes) ✅
-│   ├── AccountsControllerTests.cs (7 testes) ✅
-│   ├── MerchantsControllerTests.cs (8 testes) ✅
-│   └── PixControllerTests.cs     (4 testes) ✅
-└── Integration/
-    └── IntegrationTests.cs       (3 testes) ✅
-```
-
-**Executar testes:**
-```bash
-cd xp-bank.Tests
-dotnet test
-```
-
-**Resultado:**
-```
-Total de testes: 45
-     Aprovados: 45 (100%)
-```
-
----
-
 ## 📊 Resumo de Avaliação
 
 ### Checklist para o Professor
@@ -904,7 +881,6 @@ Total de testes: 45
 - 4 Controllers
 - 20 endpoints REST
 - LiteDB Context configurado
-- 19 testes de CRUD
 
 #### Consultas LINQ (10%)
 
@@ -916,7 +892,6 @@ Total de testes: 45
 **Evidências:**
 - Where, Contains, OrderByDescending
 - **GroupBy + Count + Sum**
-- 6 testes específicos de LINQ
 
 #### API Pública (20%)
 
@@ -929,7 +904,6 @@ Total de testes: 45
 - HttpClient configurado
 - ReceitaWS integrada
 - Bloqueio automático funcionando
-- 10 testes da API
 
 ---
 
@@ -961,60 +935,42 @@ Mostrar: Swagger abrindo automaticamente
 - Mostrar erro de bloqueio
 - Mostrar código em `ReceitaWsService.cs`
 
-#### 5. Mostrar Testes (1 minuto)
-```bash
-cd xp-bank.Tests
-dotnet test
-```
-Mostrar: 45/45 testes passando
-
-**Tempo total: ~8 minutos**
+**Tempo total: ~7 minutos**
 
 ---
 
-## 📚 Arquivos de Documentação Adicional
+## 🏗️ Diagramas de Arquitetura
 
-### Para Referência
+### 📊 Arquitetura em Camadas
 
-- `README.md` - Documentação técnica detalhada
-- `TESTES_COMPLETOS.md` - Relatório completo de testes
-- `MIGRACAO_LITEDB.md` - Explicação da escolha do LiteDB
-- `xp-bank.http` - Exemplos de requisições HTTP
-- `xp-bank.Tests/README_TESTS.md` - Documentação dos testes
+![Arquitetura em Camadas](diagrams/Diagrama%20de%20Arquitetura%20em%20Camadas.png)
+
+### 🔄 Fluxo de Transferência PIX
+
+![Fluxo de Transferência PIX](diagrams/Fluxo%20-%20Transferência%20PIX.png)
+
+### 🗃️ Relacionamento das Entidades
+
+![Relacionamento das Entidades](diagrams/ER%20Diagram.png)
+
+### 🔐 Sequência: Bloqueio Automático
+
+![Sequência: Bloqueio Automático](diagrams/Sequência%20-%20Bloqueio%20automático.png)
+
+### 📈 Consultas LINQ
+
+![Consultas LINQ](diagrams/Fluxo%20-%20Consultas%20LINQ.png)
+
+### 🔌 Injeção de Dependências
+
+![Injeção de Dependências](diagrams/Injeção%20de%20Dependências.png)
+
+### 📊 Estados da Transação
+
+![Estados da Transação](diagrams/Estados%20-%20Transaction.png)
+
+### 🎯 Visão Geral do Sistema
+
+![Visão Geral do Sistema](diagrams/Deployment.png)
 
 ---
-
-## 🎯 Nota Esperada
-
-| Critério | Peso | Status | Nota |
-|----------|------|--------|------|
-| CRUD Completo (NoSQL) | 35% | ✅ Implementado | 35/35 |
-| Consultas LINQ | 10% | ✅ Implementado | 10/10 |
-| API Pública | 20% | ✅ Implementado | 20/20 |
-| **TOTAL** | **65%** | ✅ **Completo** | **65/65** |
-
-### Diferenciais
-
-- ✅ 45 testes unitários (100% passando)
-- ✅ Documentação completa
-- ✅ Código limpo e organizado
-- ✅ Swagger configurado
-- ✅ Zero configuração para executar
-
----
-
-## 🏆 Conclusão
-
-O projeto **SafePIX** atende **100% dos requisitos** da Sprint 4, demonstrando:
-
-1. ✅ Domínio de **ASP.NET Core Web API**
-2. ✅ Domínio de **banco de dados NoSQL** (LiteDB)
-3. ✅ Domínio de **consultas LINQ** (filtros e agregações)
-4. ✅ Domínio de **integração com APIs públicas** (ReceitaWS)
-5. ✅ Boas práticas de desenvolvimento (testes, documentação, arquitetura)
-
-**Desenvolvido por:** Henrique  
-**Instituição:** FIAP  
-**Sprint:** 4  
-**Data:** Outubro 2025
-
